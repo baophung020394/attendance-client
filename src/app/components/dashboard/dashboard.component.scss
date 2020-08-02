@@ -1,0 +1,42 @@
+.group-button {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    button {
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: 10px 20px;
+        color: #03e9f4;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-bottom: 30px;
+        letter-spacing: 4px;
+        background: none;
+        border: 2px solid #03e9f4;
+        cursor: pointer;
+        &:hover {
+            background: #03e9f4;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4,
+                        0 0 25px #03e9f4,
+                        0 0 50px #03e9f4,
+                        0 0 100px #03e9f4;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        i.fa-sign-out {
+            transform: rotateY(-180deg);
+        }
+    }
+}
