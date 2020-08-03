@@ -1,7 +1,23 @@
 <div class="wrap-container">
     
     <div class="info" >
-        <h1>{{this.title}}</h1>
+        <button class="back" (click)="backClicked()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <h1><img [src]="flag" alt=""> {{this.title}}</h1>
+        <div class="container vh-100">
+            <div class="d-flex flex-column align-items-center">
+               <div class="p-1">
+                  <video #video class="vid" autoplay></video>
+               </div>
+               <div class="pb-2">
+                  <button class="btn btn-primary" (click)="capture()">Capture Image</button>
+               </div>
+               <div class="p-1">
+                  <canvas #canvas class="vid"></canvas>
+               </div>
+            </div>
+         </div>
         <agm-map [latitude]="latitude" [longitude]="longitude">
             <agm-marker [latitude]="latitude" [longitude]="longitude">
     

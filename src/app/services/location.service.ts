@@ -7,6 +7,7 @@ interface Location {
   latitude: string;
   longitude: string;
   country_name: string;
+  country_flag: string;
 }
 
 @Injectable({

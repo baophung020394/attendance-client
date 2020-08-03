@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AttandanceService } from 'src/app/services/attandance.service';
-
+import { Attandance } from '../../models/Attandance.model';
 @Component({
   selector: 'app-list-attandance',
   templateUrl: './list-attandance.component.html',
@@ -8,6 +8,7 @@ import { AttandanceService } from 'src/app/services/attandance.service';
 })
 export class ListAttandanceComponent implements OnInit {
 
+  listAttandance: Attandance[] = [];
   constructor(
     private attandanceService: AttandanceService
   ) { }
@@ -16,9 +17,11 @@ export class ListAttandanceComponent implements OnInit {
     this.getList();
   }
 
+  // tslint:disable-next-line: typedef
   getList() {
     this.attandanceService.getList().subscribe(res => {
-      console.log(res)
+      console.log(res);
+      this.listAttandance = res.attandances;
     })
   }
 }

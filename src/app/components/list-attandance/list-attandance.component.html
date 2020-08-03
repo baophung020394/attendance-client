@@ -1,1 +1,23 @@
-<p>list-attandance works!</p>
+<div class="wrap-container">
+    <div class="info">
+        <table class="table">
+            <thead>
+                <th>STT</th>
+                <th>Name</th>
+                <th>ClockIn</th>
+                <th>ClockOut</th>
+                <th>Country</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of listAttandance;index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{r.userName}}</td>
+                    <td>{{r.clockIn | date:'mediumTime'}}</td>
+                    <td>{{r.clockOut | date:'mediumTime'}}</td>
+                    <td>{{r.countryName}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="back" routerLink="/dashboard">Back</a>
+    </div>
+</div>
