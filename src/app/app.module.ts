@@ -9,6 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ClockInComponent } from './components/clock-in/clock-in.component';
 import { ClockOutComponent } from './components/clock-out/clock-out.component';
+import { AgmCoreModule } from '@agm/core'; 
+import { AuthInterceptor } from './services/authconfig.interceptor';
+import { ListAttandanceComponent } from './components/list-attandance/list-attandance.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,16 +19,26 @@ import { ClockOutComponent } from './components/clock-out/clock-out.component';
     DashboardComponent,
     RegisterComponent,
     ClockInComponent,
-    ClockOutComponent
+    ClockOutComponent,
+    ListAttandanceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA5fd6inwcfBo9JIqs3X_FzHhk9s7NZVoQ'
+    }) 
   ],
-  providers: [],
+  providers: [
+    // {
+    //     provide: HTTP_INTERCEPTORS,
+    //     useClass: AuthInterceptor,
+    //     multi: true
+    // }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

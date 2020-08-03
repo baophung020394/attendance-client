@@ -1,1 +1,19 @@
-<p>clock-out works!</p>
+<div class="wrap-container">
+    
+    <div class="info" >
+        <h1>{{this.title}}</h1>
+        <agm-map [latitude]="latitude" [longitude]="longitude">
+            <agm-marker [latitude]="latitude" [longitude]="longitude">
+    
+            </agm-marker>
+        </agm-map>
+        <div class="button-clockin">
+            <button (click)="submit()">
+                Clock Out
+                <span>{{this.currentTime | date:'mediumTime'}}</span>
+            </button>
+        </div>
+    </div>
+
+   
+</div>
